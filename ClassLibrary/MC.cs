@@ -4,41 +4,25 @@ using System.Text;
 
 namespace ClassLibrary
 {
-   public  class MC
+   public  class MC : Vehicule
     {
-        /// <summary>
-        /// instance fields string _liscencePlate, DateTime _date
-        /// </summary>
-        private string _liscenseplate;
-        private DateTime _date;
-
-        public MC()
-        {
-        }
-
         /// <summary>
         /// Constructor 
         /// </summary>
         /// <param name="LiscencePlate"></param>
         /// <param name="Date"></param>
-        public MC(string LiscencePlate, DateTime Date)
+        public MC(string LiscencePlate, DateTime Date): base(LiscencePlate, Date)
         {
-            _liscenseplate = LiscencePlate;
-            _date = Date;
-
+           
         }
-        /// <summary>
-        /// public properties LiscencePlate, Date 
-        /// </summary>
-        public string LiscencePlate { get; set; }
-        public string Date { get; set; }
+        
 
 
         /// <summary>
         /// public double method Price that returns 125
         /// </summary>
         /// <returns></returns>
-        public double Price()
+        public override double Price()
         {
             return 125;
         }
@@ -46,7 +30,7 @@ namespace ClassLibrary
         /// public string method Vehicule that returns "MC" 
         /// </summary>
         /// <returns></returns>
-        public string Vehicule()
+        public override string VehiculeType()
         {
             return "MC";
         }

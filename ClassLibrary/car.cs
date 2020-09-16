@@ -2,47 +2,33 @@
 
 namespace ClassLibrary
 {
-    public class Car
-    { /// <summary>
-    /// instance fields string _liscencePlate, DateTime _date
-    /// </summary>
-        private string _liscenseplate;
-        private DateTime _date;
-
-        public Car()
-        {
-        }
-
+    public class Car : Vehicule
+    {
+      
         /// <summary>
         /// Constructor 
         /// </summary>
         /// <param name="LiscencePlate"></param>
         /// <param name="Date"></param>
-        public Car(string LiscencePlate, DateTime Date)
+        public Car(string LiscencePlate, DateTime Date): base(LiscencePlate, Date)
         {
-            _liscenseplate = LiscencePlate;
-            _date = Date;
-
+           
         }
-        /// <summary>
-        /// public properties LiscencePlate, Date 
-        /// </summary>
-        public string LiscencePlate { get; set; }
-        public string Date { get; set; }
+       
 
         /// <summary>
-        /// public double method Price that returns 240
+        /// public double  override method Price that returns 240
         /// </summary>
         /// <returns></returns>
-        public double Price()
+        public override double Price()
         {
             return 240;
         }
         /// <summary>
-        /// public string method VehiculeType that returns "Car" 
+        /// public string  override method VehiculeType that returns "Car" 
         /// </summary>
         /// <returns></returns>
-        public string VehiculeType()
+        public override string VehiculeType()
         {
             return "Car";
         }
