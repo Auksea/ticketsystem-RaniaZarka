@@ -8,8 +8,8 @@ namespace TicketingTests
     public class UnitTest1
     {
 
-      
-        
+
+
 
         [TestMethod]
         public void TestPriceCarMethod()
@@ -50,9 +50,26 @@ namespace TicketingTests
             MC mc = new MC(LiscencePlate, Date);
             string theType = mc.VehiculeType();
             Assert.AreEqual("MC", theType);
+            
         }
 
-
-
+        [TestMethod]
+        public void LiscenePlateLenghtTest()
+        {
+            string liscencePlate = "ac14369";
+            DateTime date = new DateTime(2020, 8, 14);
+            try
+            {
+                MC mc = new MC(liscencePlate, date);
+            }
+            catch(ArgumentException)
+            {
+                Assert.Fail();
+            }
+        }
+        
+         
+        
+            
     }
 }

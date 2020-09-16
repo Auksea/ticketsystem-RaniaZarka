@@ -15,12 +15,14 @@ namespace ClassLibrary
         /// <summary>
         /// public constructor 
         /// </summary>
-        /// <param name="LiscencePlate"></param>
+        /// <param name="LiscencePlate"> Lenght not more then 7 characters else exception</param>
         /// <param name="Date"></param>
         public Vehicule(string LiscencePlate, DateTime Date)
         {
-            _liscenseplate = LiscencePlate;
             _date = Date;
+            _liscenseplate = LiscencePlate;
+            if (LiscencePlate.Length > 7)
+                throw new ArgumentException("Wrong format");
         }
 
         
@@ -28,10 +30,24 @@ namespace ClassLibrary
         /// public properties LiscencePlate, Date 
         /// </summary>
         public string LiscencePlate { get; set; }
+       /// <summary>
+       /// public property Date
+       /// </summary>
         public string Date { get; set; }
-
-        public abstract double Price();
-
+        /// <summary>
+        /// public property Discount
+        /// </summary>
+        public int Discount { get; set; }
+        /// <summary>
+        /// Abstract method double Price 
+        /// </summary>
+        /// <returns></returns>
+        public  abstract double Price();
+        
+        /// <summary>
+        /// Abstract methos string VehiculeType
+        /// </summary>
+        /// <returns></returns>
         public abstract string VehiculeType();
        
     }
