@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace ClassLibrary
-{
+{/// <summary>
+/// public Class MC that inherit from Vehicule
+/// </summary>
    public  class MC : Vehicule
     {
         /// <summary>
@@ -11,25 +13,36 @@ namespace ClassLibrary
         /// </summary>
         /// <param name="LiscencePlate"></param>
         /// <param name="Date"></param>
-        public MC(string LiscencePlate, DateTime Date): base(LiscencePlate, Date)
+        /// <param name="BroBizz"></param>
+        /// <param name="ActualPrice"></param>
+        public MC(string LiscencePlate, DateTime Date, bool BroBizz, double ActualPrice) 
+            : base(LiscencePlate, Date, BroBizz, ActualPrice)
         {
            
         }
-        
-
-
         /// <summary>
-        /// public double method Price that returns 125
+        /// new value for ActualPrice set to be 240 
         /// </summary>
-        /// <returns></returns>
+        public new double ActualPrice = 125;
+        /// <summary>
+        /// public ovveride double method Price 
+        /// </summary>
+        /// <returns>ActualPrice- discount</returns>
         public override double Price()
         {
-            return 125;
+
+            if (BroBizz == true)
+
+              return ActualPrice = ActualPrice - ActualPrice * 0.05;
+
+            else { }
+            return ActualPrice;
+
         }
         /// <summary>
-        /// public string method Vehicule that returns "MC" 
+        /// public override string method VehiculeType  
         /// </summary>
-        /// <returns></returns>
+        /// <returns>"MC"</returns>
         public override string VehiculeType()
         {
             return "MC";

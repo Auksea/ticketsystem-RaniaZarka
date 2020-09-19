@@ -2,32 +2,48 @@
 
 namespace ClassLibrary
 {
+    /// <summary>
+    /// public class Car that inherit from base class Vehicule 
+    /// </summary>
     public class Car : Vehicule
     {
-      
+        /// <summary>
+        /// public new int Actual price  of the car is set for 240 
+        /// </summary>
+        /// <summary>
+        public new double ActualPrice = 240;
+
         /// <summary>
         /// Constructor 
         /// </summary>
         /// <param name="LiscencePlate"></param>
         /// <param name="Date"></param>
-        public Car(string LiscencePlate, DateTime Date): base(LiscencePlate, Date)
+        /// <param name="BroBizz"></param>
+        /// <param name="ActualPrice"></param>
+
+        public Car(string LiscencePlate, DateTime Date, bool BroBizz, double ActualPrice) 
+            : base(LiscencePlate, Date, BroBizz, ActualPrice)
         {
-           
+            
         }
        
 
-        /// <summary>
-        /// public double  override method Price that returns 240
+        /// public double  override method Price
         /// </summary>
-        /// <returns></returns>
-        public override double Price()
+        /// <returns>price- BroBizzDiscount</returns>
+        public  override double Price()
         {
-            return 240;
+            if (BroBizz == true)
+
+              return  ActualPrice = ActualPrice - ActualPrice * 0.05;
+
+            else { }
+            return ActualPrice;
         }
         /// <summary>
-        /// public string  override method VehiculeType that returns "Car" 
+        /// public override method  method VehiculeType 
         /// </summary>
-        /// <returns></returns>
+        /// <returns>"Car"</returns>
         public override string VehiculeType()
         {
             return "Car";

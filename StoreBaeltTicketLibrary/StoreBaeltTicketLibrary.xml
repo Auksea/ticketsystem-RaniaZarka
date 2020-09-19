@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>StoreBaeltTicketLibrary</name>
+    </assembly>
+    <members>
+        <member name="T:StoreBaeltTicketLibrary.Weekend">
+            <summary>
+            public class Weekend that inherit from class Car
+            </summary>
+        </member>
+        <member name="F:StoreBaeltTicketLibrary.Weekend._weekendDiscount">
+            <summary>
+            private instance field _weekendDiscount
+            </summary>
+        </member>
+        <member name="M:StoreBaeltTicketLibrary.Weekend.#ctor(System.String,System.DateTime,System.Boolean,System.Double)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="LiscencePlate"></param>
+            <param name="Date"></param>
+            <param name="BroBizz"></param>
+            <param name="ActualPrice"></param>
+        </member>
+        <member name="P:StoreBaeltTicketLibrary.Weekend.WeekendDiscount">
+            <summary>
+            Public double property WeekendDiscount that gives 20% discount if Date contains Sunday or Saturday 
+            </summary>
+        </member>
+        <member name="M:StoreBaeltTicketLibrary.Weekend.Price">
+            <summary>
+            Override method Price double
+            </summary>
+            <returns>Base.Price() - weekendDiscount</returns>
+        </member>
+    </members>
+</doc>

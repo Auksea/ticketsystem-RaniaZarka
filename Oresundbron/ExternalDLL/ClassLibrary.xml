@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ClassLibrary</name>
+    </assembly>
+    <members>
+        <member name="M:ClassLibrary.Car.#ctor(System.String,System.DateTime,System.Boolean,System.Double)">
+            <summary>
+            Constructor 
+            </summary>
+            <param name="LiscencePlate"></param>
+            <param name="Date"></param>
+        </member>
+        <member name="M:ClassLibrary.Car.Price">
+            <summary>
+            public double  override method Price
+            </summary>
+            <returns>240</returns>
+        </member>
+        <member name="M:ClassLibrary.Car.VehiculeType">
+            <summary>
+            public string  override method VehiculeType 
+            </summary>
+            <returns>"Car"</returns>
+        </member>
+        <member name="M:ClassLibrary.MC.#ctor(System.String,System.DateTime,System.Boolean,System.Double)">
+            <summary>
+            Constructor 
+            </summary>
+            <param name="LiscencePlate"></param>
+            <param name="Date"></param>
+        </member>
+        <member name="M:ClassLibrary.MC.Price">
+            <summary>
+            public ovveride double method Price 
+            </summary>
+            <returns>125- discount</returns>
+        </member>
+        <member name="M:ClassLibrary.MC.VehiculeType">
+            <summary>
+            public override string method VehiculeType  
+            </summary>
+            <returns>"MC"</returns>
+        </member>
+        <member name="F:ClassLibrary.Vehicule._liscenseplate">
+            <summary>
+            instance fields string _liscencePlate, DateTime _date
+            </summary>
+        </member>
+        <member name="M:ClassLibrary.Vehicule.#ctor(System.String,System.DateTime,System.Boolean,System.Double)">
+            <summary>
+            public constructor 
+            </summary>
+            <param name="LiscencePlate"> Lenght not more then 7 characters else exception</param>
+            <param name="Date"></param>
+        </member>
+        <member name="P:ClassLibrary.Vehicule.LiscencePlate">
+            <summary>
+            public properties LiscencePlate, Date 
+            </summary>
+        </member>
+        <member name="P:ClassLibrary.Vehicule.Date">
+            <summary>
+            public property Date
+            </summary>
+        </member>
+        <member name="P:ClassLibrary.Vehicule.DiscountPrice">
+            <summary>
+            public int  property Discount
+            </summary>
+        </member>
+        <member name="P:ClassLibrary.Vehicule.BroBizz">
+            <summary>
+            Public bool property BroBizz
+            </summary>
+        </member>
+        <member name="M:ClassLibrary.Vehicule.Price">
+            <summary>
+            Virtual method double Price 
+            </summary>
+            <returns> if brobizz = true DiscountPrice </returns>
+        </member>
+        <member name="M:ClassLibrary.Vehicule.VehiculeType">
+            <summary>
+            Abstract method string VehiculeType
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

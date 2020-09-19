@@ -4,4 +4,8 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>C:\Users\rania\Source\Repos\ticketsystem-RaniaZarka\ClassLibrary\TicketLibrary.xml</DocumentationFile>
+  </PropertyGroup>
+
 </Project>
