@@ -2,6 +2,7 @@ using ClassLibrary;
 using Oresundbron;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using StoreBaeltTicketLibrary;
 
 namespace TicketingTests
 {
@@ -16,7 +17,7 @@ namespace TicketingTests
             DateTime Date = new DateTime(2020, 8, 14);
             bool BroBizz = false;
             double ActualPrice = 240;
-          
+
             Car c = new Car(LiscencePlate, Date, BroBizz, ActualPrice);
             double thePrice = c.Price();
             Assert.AreEqual(240, thePrice);
@@ -30,7 +31,7 @@ namespace TicketingTests
             DateTime Date = new DateTime(2020, 8, 14);
             bool BroBizz = false;
             double ActualPrice = 240;
-          
+
             Car c = new Car(LiscencePlate, Date, BroBizz, ActualPrice);
             string theType = c.VehiculeType();
             Assert.AreEqual("Car", theType);
@@ -43,7 +44,7 @@ namespace TicketingTests
             DateTime Date = new DateTime(2020, 8, 14);
             bool BroBizz = false;
             double ActualPrice = 125;
-           
+
 
             MC mc = new MC(LiscencePlate, Date, BroBizz, ActualPrice);
 
@@ -58,7 +59,7 @@ namespace TicketingTests
             DateTime Date = new DateTime(2020, 8, 14);
             bool BroBizz = false;
             double ActualPrice = 125;
-           
+
 
             MC mc = new MC(LiscencePlate, Date, BroBizz, ActualPrice);
 
@@ -74,10 +75,10 @@ namespace TicketingTests
             DateTime Date = new DateTime(2020, 8, 14);
             bool BroBizz = false;
             double ActualPrice = 125;
-          
+
             try
             {
-                MC mc = new MC(LiscencePlate, Date, BroBizz,ActualPrice);
+                MC mc = new MC(LiscencePlate, Date, BroBizz, ActualPrice);
             }
             catch (ArgumentException)
             {
@@ -93,9 +94,9 @@ namespace TicketingTests
             DateTime Date = new DateTime(2020, 8, 14);
             bool BroBizz = true;
             double ActualPrice = 125;
-        
 
-            MC mc = new MC(LiscencePlate, Date, BroBizz:true, ActualPrice);
+
+            MC mc = new MC(LiscencePlate, Date, BroBizz: true, ActualPrice);
 
             double Price = mc.Price();
 
@@ -108,10 +109,10 @@ namespace TicketingTests
             string LiscencePlate = "Ac14369";
             DateTime Date = new DateTime(2020, 8, 14);
             bool BroBizz = true;
-           // double ActualPrice = 240;
+            // double ActualPrice = 240;
 
 
-            Car c = new Car(LiscencePlate, Date, BroBizz:true, ActualPrice:240);
+            Car c = new Car(LiscencePlate, Date, BroBizz: true, ActualPrice: 240);
 
             double Price = c.Price();
 
@@ -121,11 +122,11 @@ namespace TicketingTests
         public void McOresundBroBizzPrice()
         {
             string LiscencePlate = "Ac14369";
-            DateTime Date = new DateTime( 2020, 8, 14);
+            DateTime Date = new DateTime(2020, 8, 14);
             bool BroBizz = true;
             double ActualPrice = 210;
-          
-            McOresund  mc = new McOresund(LiscencePlate, Date, BroBizz:true, ActualPrice);
+
+            McOresund mc = new McOresund(LiscencePlate, Date, BroBizz: true, ActualPrice);
 
             double Price = mc.Price();
 
@@ -170,6 +171,33 @@ namespace TicketingTests
             McOresund mc = new McOresund(LiscencePlate, Date, BroBizz, ActualPrice);
             string theType = mc.VehiculeType();
             Assert.AreEqual("Oresund Mc", theType);
+        }
+        [TestMethod]
+        public void WeekendPrice()
+        {
+            string LiscencePlate = "Ac14369";
+            DateTime Date = new DateTime(2020, 9, 19);
+            double ActualPrice = 240;
+            
+            Weekend w = new Weekend(LiscencePlate, Date, BroBizz: false, ActualPrice, DateString:"Saturday, 19, September, 2020");
+
+            double Price = w.Price();
+
+            Assert.AreEqual(192, Price);
+        }
+
+        [TestMethod]
+        public void WeekendPriceAndBroBizz()
+        {
+            string LiscencePlate = "Ac14369";
+            DateTime Date = new DateTime(2020, 9, 19);
+            double ActualPrice = 240;
+
+            Weekend w = new Weekend(LiscencePlate, Date, BroBizz:true, ActualPrice, DateString: "Saturday, 19, September, 2020");
+
+            double Price = w.Price();
+
+            Assert.AreEqual(180, Price);
         }
     }
 }

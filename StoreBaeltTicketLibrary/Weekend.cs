@@ -8,9 +8,15 @@ namespace StoreBaeltTicketLibrary
     public class Weekend : Car
     {
         /// <summary>
-        /// private instance field _weekendDiscount
+        /// ActualPrice set to be 240;
         /// </summary>
-        private double _weekendDiscount;
+        public new double ActualPrice = 240;
+        /// <summary>
+        /// private instance field string _dateString
+        /// </summary>
+       
+        private string _dateString;
+
         /// <summary>
         /// Constructor
         /// </summary>
@@ -18,37 +24,48 @@ namespace StoreBaeltTicketLibrary
         /// <param name="Date"></param>
         /// <param name="BroBizz"></param>
         /// <param name="ActualPrice"></param>
+        /// <param name="DateString"></param>
 
-        public Weekend(string LiscencePlate, DateTime Date, bool BroBizz, double ActualPrice )
+        public Weekend(string LiscencePlate, DateTime Date, bool BroBizz, double ActualPrice, string DateString)
             : base( LiscencePlate, Date, BroBizz,ActualPrice)
         {
+            _dateString = DateString;
+           
+            DateString = Date.ToLongDateString();
         }
 
+
         /// <summary>
-        /// Public double property WeekendDiscount that gives 20% discount if Date contains Sunday or Saturday 
+        /// String Property DateString
         /// </summary>
-        public double WeekendDiscount
+        public string DateString
         {
-            get { return _weekendDiscount; }
-            set
-            {
-                if (Date.Contains("Sunday") || Date.Contains("Saturday"))
-                    _weekendDiscount = ActualPrice - ActualPrice * 0.8;
-                else _weekendDiscount = 0;
-            }
+            get { return _dateString; }
+            set { _dateString = value; }
         }
+       
         /// <summary>
         /// Override method Price double
         /// </summary>
-        /// <returns>Base.Price() - weekendDiscount</returns>
+        /// <returns>if DateString contains Sunday or Saturday discount of 20% else ActualPrice</returns>
         public override double Price()
         {
-            return base.Price() - WeekendDiscount;
+            double weekendPrice = ActualPrice - ActualPrice * 0.2;
+            double weekendAndBroBizzPrice = weekendPrice - ActualPrice * 0.05;
+
+            if (DateString.Contains("Sunday") || DateString.Contains("Saturday") && BroBizz == false)
+
+                return weekendPrice; 
+
+            else if (DateString.Contains("Sunday") || DateString.Contains("Saturday") && BroBizz == true)
+
+                return  weekendAndBroBizzPrice;
+
+            else { }
+
+            return ActualPrice;
         }
-         public override string VehiculeType()
-        {
-            return "Car";
-        }
+
         
 
 

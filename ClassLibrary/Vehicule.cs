@@ -35,7 +35,7 @@ namespace ClassLibrary
                 throw new ArgumentException("Wrong format");
             _actualPrice = ActualPrice;
            // _broBizzDiscount = BroBizzDiscount;           
-            Date.ToString("dddd,dd MMMM YYYY");
+           Date.ToString("dddd,dd MMMM YYYY");
 
         }
 

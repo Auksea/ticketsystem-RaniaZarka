@@ -9,12 +9,17 @@
             public class Weekend that inherit from class Car
             </summary>
         </member>
-        <member name="F:StoreBaeltTicketLibrary.Weekend._weekendDiscount">
+        <member name="F:StoreBaeltTicketLibrary.Weekend.ActualPrice">
             <summary>
-            private instance field _weekendDiscount
+            ActualPrice set to be 240;
             </summary>
         </member>
-        <member name="M:StoreBaeltTicketLibrary.Weekend.#ctor(System.String,System.DateTime,System.Boolean,System.Double)">
+        <member name="F:StoreBaeltTicketLibrary.Weekend._dateString">
+            <summary>
+            private instance field string _dateString
+            </summary>
+        </member>
+        <member name="M:StoreBaeltTicketLibrary.Weekend.#ctor(System.String,System.DateTime,System.Boolean,System.Double,System.String)">
             <summary>
             Constructor
             </summary>
@@ -22,17 +27,18 @@
             <param name="Date"></param>
             <param name="BroBizz"></param>
             <param name="ActualPrice"></param>
+            <param name="DateString"></param>
         </member>
-        <member name="P:StoreBaeltTicketLibrary.Weekend.WeekendDiscount">
+        <member name="P:StoreBaeltTicketLibrary.Weekend.DateString">
             <summary>
-            Public double property WeekendDiscount that gives 20% discount if Date contains Sunday or Saturday 
+            String Property DateString
             </summary>
         </member>
         <member name="M:StoreBaeltTicketLibrary.Weekend.Price">
             <summary>
             Override method Price double
             </summary>
-            <returns>Base.Price() - weekendDiscount</returns>
+            <returns>if DateString contains Sunday or Saturday discount of 20% else ActualPrice</returns>
         </member>
     </members>
 </doc>
