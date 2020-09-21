@@ -11,7 +11,7 @@ namespace StoreBaeltTicketLibrary
         /// ActualPrice set to be 240;
         /// </summary>
         public new double ActualPrice = 240;
-        /// <summary>
+        /// <summary>-
         /// private instance field string _dateString
         /// </summary>
        
@@ -30,10 +30,9 @@ namespace StoreBaeltTicketLibrary
             : base( LiscencePlate, Date, BroBizz,ActualPrice)
         {
             _dateString = DateString;
-           
-            DateString = Date.ToLongDateString();
-        }
+            DateString = string.Format("{0:dddd, MMMM d yyyy}", Date);
 
+        }
 
         /// <summary>
         /// String Property DateString
@@ -41,7 +40,7 @@ namespace StoreBaeltTicketLibrary
         public string DateString
         {
             get { return _dateString; }
-            set { _dateString = value; }
+            set { _dateString  = value; }
         }
        
         /// <summary>

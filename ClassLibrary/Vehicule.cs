@@ -29,14 +29,11 @@ namespace ClassLibrary
         public Vehicule(string LiscencePlate, DateTime Date, bool BroBizz, double ActualPrice)
         {
             _broBizz = BroBizz;
-            _date = Date;
+            _date = Date;          
             _liscenseplate = LiscencePlate;
             if (LiscencePlate.Length > 7)
                 throw new ArgumentException("Wrong format");
-            _actualPrice = ActualPrice;
-           // _broBizzDiscount = BroBizzDiscount;           
-           Date.ToString("dddd,dd MMMM YYYY");
-
+            _actualPrice = ActualPrice;          
         }
 
         /// <summary>
@@ -53,8 +50,6 @@ namespace ClassLibrary
         /// <summary>
         /// Public bool property BroBizz
         /// </summary>
-        
-
         public  bool BroBizz
         {
             get { return _broBizz; }
@@ -68,35 +63,17 @@ namespace ClassLibrary
         public double ActualPrice { get; set; }
 
         /// <summary>
-        /// public double property BroBizzDiscount that gives 5% discount if Brobizz property is true 
-        /// </summary>
-        public double BroBizzDiscount
-        {
-            
-            get { return _broBizzDiscount; }
-            set
-            {
-                if (BroBizz == true)
-                    _broBizzDiscount = ActualPrice - ActualPrice * 0.95;
-                else 
-                  _broBizzDiscount = 0;
-                
-            }
-        }
-        /// <summary>
         /// Virtual method double Price 
         /// </summary>
         /// <returns> ActualPrice -  BroBizzDiscount </returns>
         public virtual double Price()
         {
-            double finalPrice = ActualPrice - BroBizzDiscount;
-            return finalPrice;
-            //if (BroBizz == true)
-
-            //    ActualPrice = ActualPrice - ActualPrice * 0.95;
-
-            //else { }
-            //return ActualPrice;
+            //double finalPrice = ActualPrice -ActualPrice * 0.95 ;
+            //return finalPrice;
+            if (BroBizz == true)
+                ActualPrice = ActualPrice - ActualPrice * 0.95;
+            else { }
+            return ActualPrice;
 
         }  
         

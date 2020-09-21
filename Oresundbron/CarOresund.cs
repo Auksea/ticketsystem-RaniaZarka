@@ -26,6 +26,8 @@ namespace Oresundbron
         public override string VehiculeType()
         {
             return "Oresund Car";
+
+           
         }
 
 

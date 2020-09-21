@@ -92,7 +92,6 @@ namespace TicketingTests
         {
             string LiscencePlate = "Ac14369";
             DateTime Date = new DateTime(2020, 8, 14);
-            bool BroBizz = true;
             double ActualPrice = 125;
 
 
@@ -100,7 +99,7 @@ namespace TicketingTests
 
             double Price = mc.Price();
 
-            Assert.AreEqual(118.75, Price, 3);
+            Assert.AreEqual(118.75, Price);
         }
 
         [TestMethod]
@@ -108,10 +107,7 @@ namespace TicketingTests
         {
             string LiscencePlate = "Ac14369";
             DateTime Date = new DateTime(2020, 8, 14);
-            bool BroBizz = true;
-            // double ActualPrice = 240;
-
-
+           
             Car c = new Car(LiscencePlate, Date, BroBizz: true, ActualPrice: 240);
 
             double Price = c.Price();
@@ -123,7 +119,6 @@ namespace TicketingTests
         {
             string LiscencePlate = "Ac14369";
             DateTime Date = new DateTime(2020, 8, 14);
-            bool BroBizz = true;
             double ActualPrice = 210;
 
             McOresund mc = new McOresund(LiscencePlate, Date, BroBizz: true, ActualPrice);
@@ -137,8 +132,7 @@ namespace TicketingTests
         public void McOresundCarBroBizzPrice()
         {
             string LiscencePlate = "Ac14369";
-            DateTime Date = new DateTime(2020, 8, 14);
-            bool BroBizz = true;
+            DateTime Date = new DateTime(2020, 8, 14);          
             double ActualPrice = 410;
 
             CarOresund c = new CarOresund(LiscencePlate, Date, BroBizz: true, ActualPrice);
