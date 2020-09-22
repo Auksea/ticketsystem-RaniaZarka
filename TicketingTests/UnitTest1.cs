@@ -167,17 +167,31 @@ namespace TicketingTests
             Assert.AreEqual("Oresund Mc", theType);
         }
         [TestMethod]
-        public void WeekendPrice()
+        public void WeekendCarStoreBaeltPrice()
         {
             string LiscencePlate = "Ac14369";
             DateTime Date = new DateTime(2020, 9, 19);
             double ActualPrice = 240;
             
-            Weekend w = new Weekend(LiscencePlate, Date, BroBizz: false, ActualPrice, DateString:"Saturday, 19, September, 2020");
+            CarStoreBaelt w = new CarStoreBaelt(LiscencePlate, Date, BroBizz: false, ActualPrice, DateString:"Saturday, 19, September, 2020");
 
             double Price = w.Price();
 
             Assert.AreEqual(192, Price);
+        }
+
+        [TestMethod]
+        public void McStorBaelt()
+        {
+            string LiscencePlate = "Ac14369";
+            DateTime Date = new DateTime(2020, 9, 19);
+            double ActualPrice = 240;
+
+            McStoreBaelt w = new McStoreBaelt(LiscencePlate, Date, BroBizz: false, ActualPrice);
+
+            double Price = w.Price();
+
+            Assert.AreEqual(125, Price);
         }
 
         [TestMethod]
@@ -187,7 +201,7 @@ namespace TicketingTests
             DateTime Date = new DateTime(2020, 9, 19);
             double ActualPrice = 240;
 
-            Weekend w = new Weekend(LiscencePlate, Date, BroBizz:true, ActualPrice, DateString: "Saturday, 19, September, 2020");
+            CarStoreBaelt w = new CarStoreBaelt(LiscencePlate, Date, BroBizz:true, ActualPrice, DateString: "Saturday, 19, September, 2020");
 
             double Price = w.Price();
 

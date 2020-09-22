@@ -42,7 +42,7 @@
         </member>
         <member name="F:ClassLibrary.MC.ActualPrice">
             <summary>
-            new value for ActualPrice set to be 240 
+            new value for ActualPrice set to be 125 
             </summary>
         </member>
         <member name="M:ClassLibrary.MC.Price">
@@ -95,11 +95,6 @@
             <summary>
             public double ActualPrice: is the price without any discount
             </summary>      
-        </member>
-        <member name="P:ClassLibrary.Vehicule.BroBizzDiscount">
-            <summary>
-            public double property BroBizzDiscount that gives 5% discount if Brobizz property is true 
-            </summary>
         </member>
         <member name="M:ClassLibrary.Vehicule.Price">
             <summary>

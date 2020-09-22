@@ -5,7 +5,8 @@ namespace StoreBaeltTicketLibrary
 {/// <summary>
 /// public class Weekend that inherit from class Car
 /// </summary>
-    public class Weekend : Car
+    public class CarStoreBaelt
+        : Car
     {
         /// <summary>
         /// ActualPrice set to be 240;
@@ -26,12 +27,12 @@ namespace StoreBaeltTicketLibrary
         /// <param name="ActualPrice"></param>
         /// <param name="DateString"></param>
 
-        public Weekend(string LiscencePlate, DateTime Date, bool BroBizz, double ActualPrice, string DateString)
+        public CarStoreBaelt(string LiscencePlate, DateTime Date, bool BroBizz, double ActualPrice, string DateString)
             : base( LiscencePlate, Date, BroBizz,ActualPrice)
         {
             _dateString = DateString;
             DateString = string.Format("{0:dddd, MMMM d yyyy}", Date);
-
+            
         }
 
         /// <summary>
@@ -52,17 +53,17 @@ namespace StoreBaeltTicketLibrary
             double weekendPrice = ActualPrice - ActualPrice * 0.2;
             double weekendAndBroBizzPrice = weekendPrice - ActualPrice * 0.05;
 
-            if (DateString.Contains("Sunday") || DateString.Contains("Saturday") && BroBizz == false)
+            if (VehiculeType() == "Car" && (DateString. Contains("Sunday") || DateString.Contains("Saturday")) && BroBizz == false)
 
                 return weekendPrice; 
 
-            else if (DateString.Contains("Sunday") || DateString.Contains("Saturday") && BroBizz == true)
+            else if (VehiculeType() == "Car" && (DateString.Contains("Sunday") || DateString.Contains("Saturday")) && BroBizz == true)
 
                 return  weekendAndBroBizzPrice;
 
-            else { }
+            else 
 
-            return ActualPrice;
+            { return ActualPrice; }
         }
 
         

@@ -4,22 +4,22 @@
         <name>StoreBaeltTicketLibrary</name>
     </assembly>
     <members>
-        <member name="T:StoreBaeltTicketLibrary.Weekend">
+        <member name="T:StoreBaeltTicketLibrary.CarStoreBaelt">
             <summary>
             public class Weekend that inherit from class Car
             </summary>
         </member>
-        <member name="F:StoreBaeltTicketLibrary.Weekend.ActualPrice">
+        <member name="F:StoreBaeltTicketLibrary.CarStoreBaelt.ActualPrice">
             <summary>
             ActualPrice set to be 240;
             </summary>
         </member>
-        <member name="F:StoreBaeltTicketLibrary.Weekend._dateString">
+        <member name="F:StoreBaeltTicketLibrary.CarStoreBaelt._dateString">
             <summary>-
             private instance field string _dateString
             </summary>
         </member>
-        <member name="M:StoreBaeltTicketLibrary.Weekend.#ctor(System.String,System.DateTime,System.Boolean,System.Double,System.String)">
+        <member name="M:StoreBaeltTicketLibrary.CarStoreBaelt.#ctor(System.String,System.DateTime,System.Boolean,System.Double,System.String)">
             <summary>
             Constructor
             </summary>
@@ -29,16 +29,37 @@
             <param name="ActualPrice"></param>
             <param name="DateString"></param>
         </member>
-        <member name="P:StoreBaeltTicketLibrary.Weekend.DateString">
+        <member name="P:StoreBaeltTicketLibrary.CarStoreBaelt.DateString">
             <summary>
             String Property DateString
             </summary>
         </member>
-        <member name="M:StoreBaeltTicketLibrary.Weekend.Price">
+        <member name="M:StoreBaeltTicketLibrary.CarStoreBaelt.Price">
             <summary>
             Override method Price double
             </summary>
             <returns>if DateString contains Sunday or Saturday discount of 20% else ActualPrice</returns>
+        </member>
+        <member name="M:StoreBaeltTicketLibrary.McStoreBaelt.#ctor(System.String,System.DateTime,System.Boolean,System.Double)">
+            <summary>
+            Constructor 
+            </summary>
+            <param name="LiscencePlate"></param>
+            <param name="Date"></param>
+            <param name="BroBizz"></param>
+            <param name="ActualPrice"></param>
+        </member>
+        <member name="M:StoreBaeltTicketLibrary.McStoreBaelt.Price">
+            <summary>
+            public ovveride double method Price 
+            </summary>
+            <returns>ActualPrice- discount</returns>
+        </member>
+        <member name="M:StoreBaeltTicketLibrary.McStoreBaelt.VehiculeType">
+            <summary>
+            public override string method VehiculeType  
+            </summary>
+            <returns>"MC"</returns>
         </member>
     </members>
 </doc>
